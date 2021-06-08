@@ -37,13 +37,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-   address:              'smtp.gmail.com',
-   port:                  587,
-   domain:               'gmail.com',
+   address:              'mail.shine-spark.co.jp',
+   port:                  465,
+   domain:               'briedge.co.jp',
    user_name:            Rails.application.credentials[:admin_email],
    password:             Rails.application.credentials[:mail_pw],
    authentication:       'plain',
-   enable_starttls_auto:  true
+   enable_starttls_auto:  true,
+   tls: true
   }
 
   config.action_mailer.perform_caching = false
